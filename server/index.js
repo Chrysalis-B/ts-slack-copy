@@ -5,6 +5,8 @@ const jsonServer = require('json-server');
 const server = jsonServer.create();
 const { setupAPI } = require('./api-server');
 const { join } = require('path');
+require('dotenv').config();
+
 
 const PORT = process.env['PORT'] || 3000;
 
