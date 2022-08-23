@@ -3,15 +3,18 @@ import { useEffect } from 'react';
 import Deferred from './deferred';
 
 /**
- * 
- * @param getData 
- * @param options 
+ *
+ * @param getData
+ * @param options
  */
-export function useAsyncDataEffect(getData: () => Promise<any>, options: {
-  stateName: string;
-  otherStatesToMonitor?: unknown[];
-  setter: (arg: any) => void;
-}): void {
+export function useAsyncDataEffect(
+  getData: () => Promise<any>,
+  options: {
+    stateName: string;
+    otherStatesToMonitor?: unknown[];
+    setter: (arg: any) => void;
+  },
+): void {
   let cancelled = false;
   const { setter, stateName } = options;
   useEffect(() => {

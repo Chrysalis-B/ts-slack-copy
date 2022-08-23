@@ -7,7 +7,6 @@ const { setupAPI } = require('./api-server');
 const { join } = require('path');
 require('dotenv').config();
 
-
 const PORT = process.env['PORT'] || 3000;
 
 const app = e();
@@ -26,5 +25,5 @@ app.use(bundler.middleware());
 
 // Listen on port PORT
 app.listen(PORT, () => {
-    console.log(`Serving on http://localhost:${PORT}`)
+  console.log(`Serving on http://localhost:${PORT}`);
 });

@@ -31,7 +31,8 @@
     "prettier"
   ],
   "rules": {
-    "prefer-const": "error"
+    "prefer-const": "error",
+    "prettier/prettier": ["error", { "usePrettierrc": true }]
   },
   "overrides": [
     /**

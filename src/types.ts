@@ -1,7 +1,7 @@
 /**
  * A user participating in a chat
  */
- export interface IUser {
+export interface IUser {
   id: number;
   username: string;
   name: string;
