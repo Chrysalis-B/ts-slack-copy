@@ -118,3 +118,5 @@ dist
 .dist-types
 tsdoc-metadata.json
 temp
+
+.DS_Store
