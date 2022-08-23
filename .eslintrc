@@ -11,7 +11,9 @@
     "eslint:recommended",
     "prettier",
     "plugin:promise/recommended",
-    "plugin:sonarjs/recommended"
+    "plugin:sonarjs/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -36,8 +38,9 @@
      * CLIENT SIDE CODE
      */
     {
-      "files": ["src/**/*.{ts,js,jsx,tsx}"],
-
+      "files": [
+        "src/**/*.{ts,js,jsx,tsx}"
+      ],
       "env": {
         "browser": true,
         "es2021": true
@@ -49,14 +52,16 @@
       "extends": [
         "eslint:recommended",
         "plugin:react/recommended",
-        "prettier/react"
+        "prettier"
       ]
     },
     /**
      * SERVER SIDE CODE
      */
     {
-      "extends": ["plugin:node/recommended"],
+      "extends": [
+        "plugin:node/recommended"
+      ],
       "files": [
         "config/**/*.js",
         "babel.config.js",
@@ -64,15 +69,29 @@
         "postcss.config.js",
         "server/**/*.js"
       ],
-      "env": { "commonjs": true, "node": true }
+      "env": {
+        "commonjs": true,
+        "node": true
+      },
+      "rules": {
+        "@typescript-eslint/no-unsafe-member-access": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off",
+        "@typescript-eslint/no-var-requires": "off",
+        "@typescript-eslint/no-unsafe-call": "off",
+        "@typescript-eslint/no-unsafe-argument": "off",
+        "@typescript-eslint/no-unsafe-return": "off",
+        "@typescript-eslint/unbound-method": "off"
+      }
     },
     /**
      * TYPESCRIPT CODE
      */
     {
-      "files": ["{src,tests}/**/*.{ts,tsx}"],
+      "files": [
+        "{src,tests}/**/*.{ts,tsx}"
+      ],
       "extends": [
-        "prettier/@typescript-eslint",
+        "prettier",
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking"
       ],
@@ -90,9 +109,14 @@
      * TESTS
      */
     {
-      "files": ["tests/**/*.{js,jsx,ts,tsx}"],
+      "files": [
+        "tests/**/*.{js,jsx,ts,tsx}"
+      ],
       "extends": [],
-      "env": { "node": true, "jest": true }
+      "env": {
+        "node": true,
+        "jest": true
+      }
     }
   ]
 }
