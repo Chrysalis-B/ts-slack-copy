@@ -1,0 +1,7 @@
+{
+  "extends": "dtslint/dtslint.json",
+  "rules": {
+    "semicolon": true,
+    "no-relative-import-in-test": false
+  }
+}
